@@ -80,4 +80,8 @@ class UserModel {
         return file_put_contents(\Codeception\Configuration::logDir().'user.txt',$this->name);
     }
 
+    public static function find($id)
+    {
+        return $id;
+    }
 }

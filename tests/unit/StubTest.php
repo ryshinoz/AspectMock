@@ -90,6 +90,12 @@ class StubTest extends \PHPUnit_Framework_TestCase
         double::registerClass('\demo\UserModel', ['defaultRole' => 'admin']);
         $this->assertEquals('admin', UserModel::defaultRole());
     }
+    
+    public function testStaticInherited()
+    {
+        double::registerClass('\demo\UserModel', ['find' => 'user']);
+        $this->assertEquals('user', AdminUserModel::findByName('admin'));
+    }
 
 //    public function testStubFunctionCall()
 //    {

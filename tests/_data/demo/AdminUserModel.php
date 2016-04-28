@@ -13,5 +13,9 @@ class AdminUserModel extends UserModel {
     }
 
 
+    public static function findByName($name)
+    {
+        return self::find($name);
+    }
 
 }
